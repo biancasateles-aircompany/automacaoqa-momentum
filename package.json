@@ -1,0 +1,24 @@
+{
+  "name": "automacaoqa-momentum",
+  "version": "1.0.0",
+  "description": "Momentum Automação de Testes Projeto de automação de testes da Momentum.  O projeto contém uma arquitetura voltada para testes de API e end-to-end, e conta com a possibilidade da utilização de browsers, chamadas de APIs e também realização de queries em banco de dados.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biancasateles-aircompany/automacaoqa-momentum.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/biancasateles-aircompany/automacaoqa-momentum/issues"
+  },
+  "homepage": "https://github.com/biancasateles-aircompany/automacaoqa-momentum#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.2.0",
+    "playwright-bdd": "^9.2.0"
+  }
+}
