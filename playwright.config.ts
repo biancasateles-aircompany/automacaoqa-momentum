@@ -1,5 +1,12 @@
 import { defineConfig, devices } from '@playwright/test';
 import { defineBddConfig } from 'playwright-bdd';
+import dotenv from 'dotenv';
+
+// Lê a variável passada no terminal; se não houver, usa 'pre_prod' como padrão
+const environment = process.env.ENV || 'pre_prod'; 
+
+// Carrega o arquivo .env correspondente ao ambiente
+dotenv.config({ path: `.env.${environment}` });
 
 // 1. Configuração do BDD: Mapeia onde estão as regras de negócio e os códigos
 const testDir = defineBddConfig({
@@ -22,10 +29,14 @@ export default defineConfig({
 
   // 5. Configurações Globais do Navegador
   use: {
+   // headless: false garante que o navegador vai abrir na sua tela
+    headless: false,
+    // Agora o Playwright sabe qual URL usar nativamente
+    baseURL: process.env.E2E_BASE_URL,
     // Coleta o Trace Viewer (logs, prints e rede) se o teste falhar
     trace: 'retain-on-failure',
     // Tira print automaticamente em caso de falha
-    screenshot: 'only-on-failure',
+    screenshot: 'on',
   },
 
   // 6. Navegadores Configurados
